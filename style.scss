@@ -1,6 +1,8 @@
 @import "variables";
 @import "typography";
 
+// Global Styles
+
 * {
 	margin: 0;
 	padding: 0;
@@ -257,11 +259,18 @@ header {
 							&:focus,
 							&:hover {
 								outline: 1px solid $white-color;
-								background-color: #fdfdfd1c;
+								background-color: rgb(25, 27, 30);
 							}
 						}
 						textarea {
 							height: 150px;
+						}
+
+						input:-webkit-autofill,
+						textarea:-webkit-autofill {
+							box-shadow: 0 0 0px 1000px rgb(25, 27, 30) inset !important;
+							-webkit-text-fill-color: white !important;
+							transition: background-color 0.3s ease;
 						}
 
 						button {
@@ -284,6 +293,7 @@ header {
 	}
 }
 
+// Responsive Media Query
 @media (max-width: 1485px) {
 	header .main-container .hero-content-container {
 		flex-direction: column;
