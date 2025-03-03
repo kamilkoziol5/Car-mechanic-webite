@@ -1,7 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+	const menu = document.querySelector(".menu-container")
 	const hamburger = document.querySelector(".hamburger")
 	const sidebar = document.querySelector(".sidebar")
 	const close = document.querySelector(".close")
+
+	// Dodanie klasy .scrolled do menu-container po przewinięciu strony
+	window.addEventListener("scroll", function () {
+		if (window.scrollY > 50) {
+			menu.classList.add("scrolled")
+		} else {
+			menu.classList.remove("scrolled")
+		}
+	})
 
 	// Otwieranie Menu - dodanie klasy .open do sidebar
 	hamburger.addEventListener("click", function () {

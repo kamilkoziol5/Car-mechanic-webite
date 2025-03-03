@@ -25,6 +25,7 @@ header {
 	background-position: center;
 	min-height: 100vh;
 	width: 100vw;
+	padding-top: 0;
 	z-index: 1;
 
 	&:after {
@@ -45,10 +46,20 @@ header {
 
 		// Menu styles
 		.menu-container {
-			position: relative;
+			position: sticky;
+			top: 0;
+			left: 0;
+			padding-top: 50px;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			transition: all 0.3s ease;
+
+			&.scrolled {
+				background-color: $text-dark;
+				padding: 50px 20px 20px 20px;
+				border: 1px solid $stroke-color;
+			}
 
 			.logo img {
 				width: 250px;
@@ -82,22 +93,22 @@ header {
 				background-color: rgba(0, 0, 0, 0.219);
 				backdrop-filter: blur(10px);
 				border-radius: 22px;
-				box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
 				border: 1px solid $stroke-color;
 				padding: 60px;
 				width: 80vw;
-				min-height: 50vh;
+				min-height: 70vh;
 				position: absolute;
-				top: 0;
+				top: 100px;
+				transform: translateX(-100%) translateY(-100%) scale(0.5);
 				left: 50%;
-				transform: translateX(-50%);
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				z-index: 999;
 				opacity: 0;
 				visibility: hidden;
 				transition: all 0.5s ease-in-out;
+				z-index: 1;
 
 				ul {
 					display: flex;
@@ -135,6 +146,8 @@ header {
 			.open {
 				opacity: 1;
 				visibility: visible;
+				z-index: 9999;
+				transform: translateX(-50%) translateY(0) scale(1);
 			}
 
 			.hamburger svg {
@@ -170,8 +183,7 @@ header {
 				gap: 20px;
 
 				p {
-					color: $white-color;
-					opacity: 0.7;
+					color: $text-gray;
 				}
 
 				a {
@@ -216,7 +228,6 @@ header {
 				.form-container {
 					background-color: #ffffff17;
 					box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-					backdrop-filter: blur(8px);
 					border: 1px solid $stroke-color;
 					border-radius: 22px;
 					padding: 40px;
@@ -251,8 +262,7 @@ header {
 							transition: all 0.3s ease;
 
 							&::placeholder {
-								color: $white-color;
-								opacity: 0.5;
+								color: $text-gray;
 							}
 
 							&:active,
@@ -319,5 +329,33 @@ header {
 
 	header .main-container .menu-container .hamburger svg {
 		display: block;
+	}
+}
+
+@media (max-width: 700px) {
+	header .main-container .menu-container .logo img {
+		width: 150px;
+	}
+
+	.btn1 {
+		padding: 15px 20px;
+		font-size: 16px;
+	}
+	header
+		.main-container
+		.hero-content-container
+		.left-content-area
+		.hero-contact-phone
+		.hero-contact-info
+		a {
+		font-size: 20px;
+	}
+
+	header
+		.main-container
+		.hero-content-container
+		.right-form-area
+		.form-container {
+		padding: 30px;
 	}
 }
