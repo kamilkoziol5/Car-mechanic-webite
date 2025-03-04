@@ -75,6 +75,7 @@ p {
 .main-container {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 html {
@@ -103,6 +104,7 @@ header:after {
   z-index: -1;
 }
 header .menu-container {
+  position: relative;
   padding-top: 50px;
   display: flex;
   justify-content: space-between;
@@ -195,7 +197,18 @@ header .menu-container .open {
   transform: translateX(-50%) translateY(0) scale(1);
 }
 header .menu-container .hamburger {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1764705882);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.55);
+  background-color: #191b1e;
   display: none;
+  align-items: center;
+  position: fixed;
+  right: 30px;
+  transition: all 0.3s ease;
+}
+header .menu-container .hamburger:hover {
+  transform: scale(0.9);
 }
 header .menu-container .hamburger svg {
   cursor: pointer;
@@ -244,10 +257,20 @@ header .hero-content-container .left-content-area .hero-contact-phone .hero-cont
   font-size: 24px;
   transition: all 0.3s ease;
   cursor: grabbing;
+  animation: pulse 2s ease-in-out infinite;
 }
 header .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info a:hover {
   color: #5f67ff;
   transform: scale(0.95);
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
+    color: rgb(255, 70, 70);
+  }
 }
 header .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info span:nth-child(2) {
   font-family: "DM Sans", sans-serif;
@@ -364,7 +387,6 @@ main .about-section .main-container {
 }
 main .about-section .main-container .about-left {
   flex: 1;
-  max-width: 50%;
   text-align: left;
 }
 main .about-section .main-container .about-left .car {
@@ -404,6 +426,17 @@ main .about-section .main-container .about-right .subtitle {
   margin-bottom: 20px;
   color: #191b1e;
 }
+main .about-section .main-container .about-right .subtitle img {
+  animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 main .about-section .main-container .about-right .title {
   display: flex;
   flex-direction: column;
@@ -434,6 +467,9 @@ main .about-section .main-container .about-right .title img {
   header .main-container .hero-content-container .right-form-area {
     max-width: 100%;
   }
+  header .main-container .hero-content-container .right-form-area .form-container {
+    margin-bottom: 50px;
+  }
 }
 @media (max-width: 1120px) {
   .menu {
@@ -443,7 +479,33 @@ main .about-section .main-container .about-right .title img {
     display: none;
   }
   header .main-container .menu-container .hamburger {
-    display: block;
+    display: flex;
+  }
+  main .about-section .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main .about-section .main-container .about-left {
+    text-align: center;
+  }
+  main .about-section .main-container .about-left .car {
+    width: 50%;
+  }
+  main .about-section .main-container .about-left .trusted-card {
+    margin-top: 50px;
+    padding: 15px;
+  }
+  main .about-section .main-container .about-right .subtitle {
+    justify-content: center;
+  }
+  main .about-section .main-container .about-right .title {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  main .about-section .main-container .about-right .title img {
+    width: 50%;
   }
 }
 @media (max-width: 700px) {
