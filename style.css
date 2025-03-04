@@ -15,6 +15,7 @@ h2 {
   font-size: 32px;
   line-height: 41px;
   font-weight: 400;
+  color: #191b1e;
 }
 
 h3 {
@@ -71,9 +72,13 @@ p {
   list-style: none;
 }
 
-section,
-header {
-  padding: 60px 5%;
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 header {
@@ -97,35 +102,23 @@ header:after {
   background-color: rgba(0, 0, 0, 0.55);
   z-index: -1;
 }
-header .main-container {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-header .main-container .menu-container {
-  position: sticky;
-  top: 0;
-  left: 0;
+header .menu-container {
   padding-top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
 }
-header .main-container .menu-container.scrolled {
-  background-color: #191b1e;
-  padding: 50px 20px 20px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1764705882);
-}
-header .main-container .menu-container .logo img {
+header .menu-container .logo img {
   width: 250px;
   height: auto;
 }
-header .main-container .menu-container .menu ul {
+header .menu-container .menu ul {
   display: flex;
   align-items: center;
   gap: 50px;
 }
-header .main-container .menu-container .menu ul li a {
+header .menu-container .menu ul li a {
   background-color: rgba(255, 255, 255, 0.082);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -136,12 +129,12 @@ header .main-container .menu-container .menu ul li a {
   padding: 10px;
   transition: all 0.3s ease;
 }
-header .main-container .menu-container .menu ul li a:hover {
+header .menu-container .menu ul li a:hover {
   color: #5f67ff;
   background-color: #191b1e;
   transform: translateY(-4px);
 }
-header .main-container .menu-container .sidebar {
+header .menu-container .sidebar {
   background-color: rgba(0, 0, 0, 0.219);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -163,13 +156,14 @@ header .main-container .menu-container .sidebar {
   transition: all 0.5s ease-in-out;
   z-index: 1;
 }
-header .main-container .menu-container .sidebar ul {
+header .menu-container .sidebar ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 }
-header .main-container .menu-container .sidebar ul li a {
+header .menu-container .sidebar ul li a {
+  display: inline-block;
   padding: 15px;
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
@@ -177,109 +171,115 @@ header .main-container .menu-container .sidebar ul li a {
   font-size: 20px;
   transition: all 0.3s ease;
 }
-header .main-container .menu-container .sidebar ul li a:hover {
+header .menu-container .sidebar ul li a:hover {
   background-color: #5f67ff;
   color: #fff;
+  transform: scale(0.95);
+  box-shadow: 0 5 10px rgba(0, 0, 0, 0.3);
 }
-header .main-container .menu-container .sidebar ul .close a {
+header .menu-container .sidebar ul .close a {
   display: inline-block;
   background-color: #5f67ff;
   border: 1px solid transparent;
   margin-bottom: 15px;
+  transition: all 0.3s ease;
 }
-header .main-container .menu-container .sidebar ul .close a:hover {
+header .menu-container .sidebar ul .close a:hover {
   border-color: rgba(255, 255, 255, 0.1764705882);
+  transform: scale(0.95);
 }
-header .main-container .menu-container .open {
+header .menu-container .open {
   opacity: 1;
   visibility: visible;
   z-index: 9999;
   transform: translateX(-50%) translateY(0) scale(1);
 }
-header .main-container .menu-container .hamburger svg {
-  cursor: pointer;
+header .menu-container .hamburger {
   display: none;
+}
+header .menu-container .hamburger svg {
+  cursor: pointer;
   width: 40px;
   height: 40px;
   transition: all 0.3s ease;
 }
-header .main-container .menu-container .hamburger svg path {
+header .menu-container .hamburger svg path {
   fill: #fff;
 }
-header .main-container .menu-container .hamburger svg:hover path {
+header .menu-container .hamburger svg:hover path {
   fill: #5f67ff;
 }
-header .main-container .hero-content-container {
+header .hero-content-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 100px;
   margin-top: 150px;
 }
-header .main-container .hero-content-container .left-content-area {
+header .hero-content-container .left-content-area {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-header .main-container .hero-content-container .left-content-area p {
+header .hero-content-container .left-content-area p {
   color: rgba(255, 255, 255, 0.7333333333);
 }
-header .main-container .hero-content-container .left-content-area a {
+header .hero-content-container .left-content-area a {
   width: -moz-max-content;
   width: max-content;
 }
-header .main-container .hero-content-container .left-content-area .hero-contact-phone {
+header .hero-content-container .left-content-area .hero-contact-phone {
   display: flex;
   align-items: center;
   gap: 25px;
 }
-header .main-container .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info {
+header .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info {
   display: flex;
   flex-direction: column;
   color: #fff;
 }
-header .main-container .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info a {
+header .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info a {
   color: #fff;
   font-size: 24px;
   transition: all 0.3s ease;
   cursor: grabbing;
 }
-header .main-container .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info a:hover {
+header .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info a:hover {
   color: #5f67ff;
   transform: scale(0.95);
 }
-header .main-container .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info span:nth-child(2) {
+header .hero-content-container .left-content-area .hero-contact-phone .hero-contact-info span:nth-child(2) {
   font-family: "DM Sans", sans-serif;
   font-weight: 200;
 }
-header .main-container .hero-content-container .right-form-area {
+header .hero-content-container .right-form-area {
   flex: 1;
   max-width: 35%;
 }
-header .main-container .hero-content-container .right-form-area .form-container {
+header .hero-content-container .right-form-area .form-container {
   background-color: rgba(255, 255, 255, 0.0901960784);
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1764705882);
   border-radius: 22px;
   padding: 40px;
 }
-header .main-container .hero-content-container .right-form-area .form-container h2 {
+header .hero-content-container .right-form-area .form-container h2 {
   text-align: center;
   color: #fff;
   text-transform: uppercase;
 }
-header .main-container .hero-content-container .right-form-area .form-container h2 span {
+header .hero-content-container .right-form-area .form-container h2 span {
   color: #5f67ff;
 }
-header .main-container .hero-content-container .right-form-area .form-container form {
+header .hero-content-container .right-form-area .form-container form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
 }
-header .main-container .hero-content-container .right-form-area .form-container form input,
-header .main-container .hero-content-container .right-form-area .form-container form textarea {
+header .hero-content-container .right-form-area .form-container form input,
+header .hero-content-container .right-form-area .form-container form textarea {
   cursor: text;
   padding: 15px;
   background-color: transparent;
@@ -291,39 +291,134 @@ header .main-container .hero-content-container .right-form-area .form-container 
   outline: 1px solid transparent;
   transition: all 0.3s ease;
 }
-header .main-container .hero-content-container .right-form-area .form-container form input::-moz-placeholder, header .main-container .hero-content-container .right-form-area .form-container form textarea::-moz-placeholder {
+header .hero-content-container .right-form-area .form-container form input::-moz-placeholder, header .hero-content-container .right-form-area .form-container form textarea::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7333333333);
 }
-header .main-container .hero-content-container .right-form-area .form-container form input::placeholder,
-header .main-container .hero-content-container .right-form-area .form-container form textarea::placeholder {
+header .hero-content-container .right-form-area .form-container form input::placeholder,
+header .hero-content-container .right-form-area .form-container form textarea::placeholder {
   color: rgba(255, 255, 255, 0.7333333333);
 }
-header .main-container .hero-content-container .right-form-area .form-container form input:active, header .main-container .hero-content-container .right-form-area .form-container form input:focus, header .main-container .hero-content-container .right-form-area .form-container form input:hover,
-header .main-container .hero-content-container .right-form-area .form-container form textarea:active,
-header .main-container .hero-content-container .right-form-area .form-container form textarea:focus,
-header .main-container .hero-content-container .right-form-area .form-container form textarea:hover {
+header .hero-content-container .right-form-area .form-container form input:active, header .hero-content-container .right-form-area .form-container form input:focus, header .hero-content-container .right-form-area .form-container form input:hover,
+header .hero-content-container .right-form-area .form-container form textarea:active,
+header .hero-content-container .right-form-area .form-container form textarea:focus,
+header .hero-content-container .right-form-area .form-container form textarea:hover {
   outline: 1px solid #fff;
   background-color: rgb(25, 27, 30);
 }
-header .main-container .hero-content-container .right-form-area .form-container form textarea {
+header .hero-content-container .right-form-area .form-container form textarea:not(:-moz-placeholder-shown), header .hero-content-container .right-form-area .form-container form input:not(:-moz-placeholder-shown) {
+  background-color: rgb(14, 14, 15);
+}
+header .hero-content-container .right-form-area .form-container form textarea:not(:placeholder-shown),
+header .hero-content-container .right-form-area .form-container form input:not(:placeholder-shown) {
+  background-color: rgb(14, 14, 15);
+}
+header .hero-content-container .right-form-area .form-container form textarea {
   height: 150px;
 }
-header .main-container .hero-content-container .right-form-area .form-container form input:-webkit-autofill,
-header .main-container .hero-content-container .right-form-area .form-container form textarea:-webkit-autofill {
+header .hero-content-container .right-form-area .form-container form input:-webkit-autofill,
+header .hero-content-container .right-form-area .form-container form textarea:-webkit-autofill {
   box-shadow: 0 0 0px 1000px rgb(25, 27, 30) inset !important;
   -webkit-text-fill-color: white !important;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
-header .main-container .hero-content-container .right-form-area .form-container form button {
+header .hero-content-container .right-form-area .form-container form button {
   font-family: "Days One", sans-serif;
   outline: 1px solid transparent;
   border: none;
   cursor: pointer;
   margin-top: 20px;
 }
-header .main-container .hero-content-container .right-form-area .form-container form button:active, header .main-container .hero-content-container .right-form-area .form-container form button:focus, header .main-container .hero-content-container .right-form-area .form-container form button:hover {
+header .hero-content-container .right-form-area .form-container form button:active, header .hero-content-container .right-form-area .form-container form button:focus, header .hero-content-container .right-form-area .form-container form button:hover {
   outline: 1px solid #fff;
+}
+
+main .banner-header {
+  background-color: #5f67ff;
+  padding: 30px;
+}
+main .banner-header .main-container {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+main .banner-header .main-container .card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+}
+main .banner-header .main-container .card p {
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 200;
+}
+
+main .about-section {
+  margin: 100px 0;
+}
+main .about-section .main-container {
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+}
+main .about-section .main-container .about-left {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+}
+main .about-section .main-container .about-left .car {
+  width: 100%;
+}
+main .about-section .main-container .about-left .trusted-card {
+  cursor: pointer;
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  gap: 20px;
+  background-color: #5f67ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease;
+}
+main .about-section .main-container .about-left .trusted-card h4 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.65);
+  transition: all 0.3s ease;
+}
+main .about-section .main-container .about-left .trusted-card:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.85);
+}
+main .about-section .main-container .about-left .trusted-card:hover h4 {
+  text-shadow: 0 4px 5px rgba(0, 0, 0, 0.85);
+}
+main .about-section .main-container .about-right {
+  flex: 1;
+}
+main .about-section .main-container .about-right .subtitle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  color: #191b1e;
+}
+main .about-section .main-container .about-right .title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .about-section .main-container .about-right .title p {
+  color: #2b4448;
+}
+main .about-section .main-container .about-right .title a {
+  width: -moz-max-content;
+  width: max-content;
+}
+main .about-section .main-container .about-right .title img {
+  margin-top: 30px;
+  width: 100%;
 }
 
 @media (max-width: 1485px) {
@@ -334,6 +429,7 @@ header .main-container .hero-content-container .right-form-area .form-container 
     text-align: center;
     justify-content: center;
     align-items: center;
+    max-width: 70vw;
   }
   header .main-container .hero-content-container .right-form-area {
     max-width: 100%;
@@ -346,7 +442,7 @@ header .main-container .hero-content-container .right-form-area .form-container 
   .menu-button {
     display: none;
   }
-  header .main-container .menu-container .hamburger svg {
+  header .main-container .menu-container .hamburger {
     display: block;
   }
 }
@@ -363,5 +459,8 @@ header .main-container .hero-content-container .right-form-area .form-container 
   }
   header .main-container .hero-content-container .right-form-area .form-container {
     padding: 30px;
+  }
+  header .main-container .hero-content-container .left-content-area {
+    max-width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
