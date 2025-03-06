@@ -9,16 +9,26 @@
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
+	scroll-behavior: smooth;
 }
 
 .main-container {
 	max-width: 1440px;
 	margin: 0 auto;
-	padding: 0 30px;
 }
 
 html {
 	overflow-x: hidden;
+}
+
+body {
+	display: grid;
+	place-content: center;
+}
+
+header,
+section {
+	padding: 0 1rem;
 }
 
 // Header Styles
@@ -30,8 +40,10 @@ header {
 	background-position: center;
 	min-height: 100vh;
 	width: 100vw;
-	padding-top: 0;
 	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&:after {
 		content: "";
@@ -46,12 +58,23 @@ header {
 
 	// Menu styles
 	.menu-container {
-		position: relative;
-		padding-top: 50px;
+		position: fixed;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		max-width: 1440px;
+		width: 100%;
+		padding: 40px 1rem;
 		display: flex;
+		gap: 40px;
 		justify-content: space-between;
 		align-items: center;
 		transition: all 0.3s ease;
+
+		&.scrolled {
+			background-color: $text-dark;
+			border-bottom: 2px solid $stroke-color;
+		}
 
 		.logo img {
 			width: 250px;
@@ -82,7 +105,7 @@ header {
 		}
 
 		.sidebar {
-			background-color: rgba(0, 0, 0, 0.219);
+			background-color: rgba(0, 0, 0, 0.4);
 			backdrop-filter: blur(10px);
 			border-radius: 22px;
 			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
@@ -90,7 +113,7 @@ header {
 			padding: 60px;
 			width: 80vw;
 			min-height: 70vh;
-			position: absolute;
+			position: fixed;
 			top: 100px;
 			transform: translateX(-100%) translateY(-100%) scale(0.5);
 			left: 50%;
@@ -331,10 +354,14 @@ header {
 	}
 }
 
+main {
+	position: relative;
+}
 // Banner Styles
 main .banner-header {
+	padding: 40px 0;
+	width: 100%;
 	background-color: $accent-color;
-	padding: 30px;
 
 	.main-container {
 		display: flex;
@@ -353,6 +380,23 @@ main .banner-header {
 				font-weight: 200;
 			}
 		}
+	}
+}
+
+main .scrollup {
+	padding: 15px;
+	background-color: $text-dark;
+	border: 1px solid $stroke-color;
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	color: $white-color;
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		transform: scale(0.9);
+		border: 1px solid $accent-color;
 	}
 }
 
@@ -411,9 +455,19 @@ main .about-section {
 				gap: 20px;
 				margin-bottom: 20px;
 				color: $text-dark;
+				transition: all 0.3s ease;
+
+				&:hover {
+					color: $accent-color;
+
+					img {
+						animation-play-state: paused;
+					}
+				}
 
 				img {
-					animation: rotate 2s linear infinite;
+					width: 50px;
+					animation: rotate 3s linear infinite;
 				}
 			}
 
@@ -513,6 +567,16 @@ main .about-section {
 					width: 50%;
 				}
 			}
+		}
+	}
+
+	main .banner-header .main-container {
+		flex-direction: column;
+		text-align: center;
+		gap: 50px;
+
+		.card {
+			flex-direction: column;
 		}
 	}
 }
