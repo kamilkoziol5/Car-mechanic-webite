@@ -12,33 +12,33 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: clamp(26px, 4vw, 36px);
   line-height: 41px;
   font-weight: 400;
   color: #191b1e;
 }
 
 h3 {
-  font-size: 28px;
+  font-size: clamp(22px, 3vw, 28px);
   line-height: 32px;
   font-weight: 400;
 }
 
 h4 {
-  font-size: 25px;
+  font-size: clamp(20px, 2.5vw, 26px);
   line-height: 32px;
   font-weight: 400;
 }
 
 h5 {
-  font-size: 18px;
+  font-size: clamp(16px, 1.8vw, 18px);
   line-height: 23px;
   font-weight: 400;
 }
 
 p {
   font-family: "DM Sans", sans-serif;
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: 400;
   line-height: 26px;
 }
@@ -644,7 +644,23 @@ main .about-section .main-container .about-right .title img {
   header .main-container .hero-content-container .right-form-area .form-container {
     padding: 30px;
   }
+  main .about-section {
+    margin: 50px 0;
+  }
+  main .about-section .main-container .about-left .trusted-card {
+    flex-direction: column;
+    gap: 10px;
+  }
+  main .about-section .main-container .about-left .trusted-card h4 {
+    font-size: 20px;
+  }
   header .main-container .hero-content-container .left-content-area {
     max-width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .services-section .service-cards .card {
+    min-width: 200px;
+    padding: 30px;
   }
 }/*# sourceMappingURL=style.css.map */

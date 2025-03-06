@@ -681,7 +681,27 @@ main .about-section {
 		padding: 30px;
 	}
 
+	main .about-section {
+		margin: 50px 0;
+
+		.main-container .about-left .trusted-card {
+			flex-direction: column;
+			gap: 10px;
+
+			h4 {
+				font-size: 20px;
+			}
+		}
+	}
+
 	header .main-container .hero-content-container .left-content-area {
 		max-width: 100%;
+	}
+}
+
+@media (max-width: 450px) {
+	.services-section .service-cards .card {
+		min-width: 200px;
+		padding: 30px;
 	}
 }

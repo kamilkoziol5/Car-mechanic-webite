@@ -14,11 +14,11 @@ $font-family-second: "DM Sans", sans-serif;
 
 // Font Sizes
 $font-size-h1: clamp(30px, 5vw, 60px);
-$font-size-h2: 32px;
-$font-size-h3: 28px;
-$font-size-h4: 25px;
-$font-size-h5: 18px;
-$font-size-paragraph: 20px;
+$font-size-h2: clamp(26px, 4vw, 36px);
+$font-size-h3: clamp(22px, 3vw, 28px);
+$font-size-h4: clamp(20px, 2.5vw, 26px);
+$font-size-h5: clamp(16px, 1.8vw, 18px);
+$font-size-paragraph: clamp(16px, 2vw, 20px);
 $font-size-button: 20px;
 
 // Font Weight
