@@ -73,11 +73,6 @@ p {
   scroll-behavior: smooth;
 }
 
-.main-container {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 html {
   overflow-x: hidden;
 }
@@ -87,7 +82,11 @@ body {
   place-content: center;
 }
 
-header,
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 section {
   padding: 0 1rem;
 }
@@ -120,18 +119,21 @@ header .menu-container {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 1440px;
+  max-width: 100%;
   width: 100%;
-  padding: 40px 1rem;
+  padding: 40px 10% 25px 10%;
   display: flex;
   gap: 40px;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease-in-out;
+  z-index: 999999;
+  border-bottom: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.0666666667);
 }
 header .menu-container.scrolled {
   background-color: #191b1e;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1764705882);
+  border-bottom: 2px solid #fff;
 }
 header .menu-container .logo img {
   width: 250px;
@@ -178,7 +180,7 @@ header .menu-container .sidebar {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease-in-out;
-  z-index: 1;
+  z-index: 99999;
 }
 header .menu-container .sidebar ul {
   display: flex;
@@ -378,12 +380,8 @@ header .hero-content-container .right-form-area .form-container form button:acti
   outline: 1px solid #fff;
 }
 
-main {
-  position: relative;
-}
-
 main .banner-header {
-  padding: 40px 0;
+  padding: 40px 1rem;
   width: 100%;
   background-color: #5f67ff;
 }
@@ -404,20 +402,31 @@ main .banner-header .main-container .card p {
   font-weight: 200;
 }
 
-main .scrollup {
-  padding: 15px;
-  background-color: #191b1e;
-  border: 1px solid rgba(255, 255, 255, 0.1764705882);
-  position: fixed;
-  right: 50px;
-  bottom: 50px;
-  color: #fff;
-  cursor: pointer;
+main .subtitle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  color: #191b1e;
   transition: all 0.3s ease;
 }
-main .scrollup:hover {
-  transform: scale(0.9);
-  border: 1px solid #5f67ff;
+main .subtitle:hover {
+  color: #5f67ff;
+}
+main .subtitle:hover img {
+  animation-play-state: paused;
+}
+main .subtitle img {
+  width: 50px;
+  animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 main .about-section {
@@ -462,32 +471,6 @@ main .about-section .main-container .about-left .trusted-card:hover h4 {
 main .about-section .main-container .about-right {
   flex: 1;
 }
-main .about-section .main-container .about-right .subtitle {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  color: #191b1e;
-  transition: all 0.3s ease;
-}
-main .about-section .main-container .about-right .subtitle:hover {
-  color: #5f67ff;
-}
-main .about-section .main-container .about-right .subtitle:hover img {
-  animation-play-state: paused;
-}
-main .about-section .main-container .about-right .subtitle img {
-  width: 50px;
-  animation: rotate 3s linear infinite;
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 main .about-section .main-container .about-right .title {
   display: flex;
   flex-direction: column;
@@ -503,6 +486,83 @@ main .about-section .main-container .about-right .title a {
 main .about-section .main-container .about-right .title img {
   margin-top: 30px;
   width: 100%;
+}
+
+.services-section .subtitle {
+  justify-content: center;
+}
+.services-section .title {
+  text-align: center;
+}
+.services-section .service-cards {
+  z-index: -1;
+  display: flex;
+  margin: 50px 0 100px 0;
+  gap: 20px;
+}
+.services-section .service-cards .card {
+  min-width: 350px;
+  flex: 1;
+  position: relative;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 10px;
+  border-radius: 12px;
+  height: 65vh;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+  transition: all 0.3s ease;
+}
+.services-section .service-cards .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.65);
+}
+.services-section .service-cards .card h5 {
+  color: #5f67ff;
+}
+.services-section .service-cards .card p {
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+.services-section .service-cards .card span {
+  padding: 10px;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  text-decoration: underline;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.services-section .service-cards .card span:hover {
+  background-color: #191b1e;
+  color: #5f67ff;
+  border: 1px solid rgba(255, 255, 255, 0.1764705882);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+  border-radius: 12px;
+}
+.services-section .service-cards .card1 {
+  background-image: url(assets/images/service-1.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.services-section .service-cards .card2 {
+  background-image: url(assets/images/service-2.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.services-section .service-cards .card3 {
+  background-image: url(assets/images/service-3.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1485px) {
@@ -522,7 +582,7 @@ main .about-section .main-container .about-right .title img {
     margin-bottom: 50px;
   }
 }
-@media (max-width: 1120px) {
+@media (max-width: 1210px) {
   .menu {
     display: none;
   }
@@ -541,7 +601,7 @@ main .about-section .main-container .about-right .title img {
     text-align: center;
   }
   main .about-section .main-container .about-left .car {
-    width: 50%;
+    width: 85%;
   }
   main .about-section .main-container .about-left .trusted-card {
     margin-top: 50px;
@@ -556,7 +616,7 @@ main .about-section .main-container .about-right .title img {
     text-align: center;
   }
   main .about-section .main-container .about-right .title img {
-    width: 50%;
+    width: 85%;
   }
   main .banner-header .main-container {
     flex-direction: column;
@@ -565,6 +625,9 @@ main .about-section .main-container .about-right .title img {
   }
   main .banner-header .main-container .card {
     flex-direction: column;
+  }
+  .services-section .service-cards {
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 700px) {
