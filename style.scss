@@ -33,7 +33,7 @@ section {
 // Header Styles
 header {
 	position: relative;
-	background-image: url(assets/images/freepik__candid-image-photography-natural-textures-highly-r__42760.png);
+	background-image: url(assets/images/background\ hero.webp);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -219,6 +219,10 @@ header {
 			flex-direction: column;
 			gap: 20px;
 
+			h1 {
+				text-shadow: 4px 4px 15px $text-dark;
+			}
+
 			p {
 				color: $text-gray;
 			}
@@ -276,7 +280,8 @@ header {
 			max-width: 35%;
 
 			.form-container {
-				background-color: #ffffff17;
+				background-color: #35353559;
+				backdrop-filter: blur(6px);
 				box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 				border: 1px solid $stroke-color;
 				border-radius: 22px;
@@ -571,7 +576,7 @@ main .about-section {
 		}
 
 		.card1 {
-			background-image: url(assets/images/service-1.png);
+			background-image: url(assets/images/service-1.webp);
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -579,14 +584,14 @@ main .about-section {
 		}
 
 		.card2 {
-			background-image: url(assets/images/service-2.png);
+			background-image: url(assets/images/service-2.webp);
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 0;
 		}
 		.card3 {
-			background-image: url(assets/images/service-3.png);
+			background-image: url(assets/images/service-3.webp);
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -647,6 +652,10 @@ main .about-section {
 					display: flex;
 					align-items: center;
 					gap: 10px;
+
+					svg path {
+						fill: $accent-color;
+					}
 
 					span {
 						display: inline-block;
