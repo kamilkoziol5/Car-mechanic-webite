@@ -30,3 +30,37 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	})
 })
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener("click", function (e) {
+		e.preventDefault()
+		const targetId = this.getAttribute("href").substring(1)
+		const targetElement = document.getElementById(targetId)
+
+		if (targetElement) {
+			const offset = 160 // Przesunięcie o 100px
+			const targetPosition = targetElement.offsetTop - offset
+
+			window.scrollTo({
+				top: targetPosition,
+				behavior: "smooth",
+			})
+		}
+	})
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+	// Odczytaj zapisaną pozycję scrolla
+	let scrollPosition = sessionStorage.getItem("scrollPosition")
+
+	if (scrollPosition !== null) {
+		setTimeout(() => {
+			window.scrollTo(0, parseInt(scrollPosition, 10))
+		}, 100) // Opóźnienie 100ms, aby przeglądarka zdążyła załadować stronę
+	}
+})
+
+// Zapisuj pozycję scrolla na bieżąco
+window.addEventListener("scroll", function () {
+	sessionStorage.setItem("scrollPosition", window.scrollY)
+})
