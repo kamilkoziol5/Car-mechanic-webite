@@ -28,6 +28,7 @@ body {
 
 section {
 	padding: 0 1rem;
+	margin-top: 100px;
 }
 
 // Header Styles
@@ -72,6 +73,7 @@ header {
 		z-index: 999999;
 		border-bottom: 1px solid $white-color;
 		background-color: #ffffff11;
+		margin-top: 0;
 
 		&.scrolled {
 			background-color: $text-dark;
@@ -367,6 +369,7 @@ main .banner-header {
 	padding: 40px 1rem;
 	width: 100%;
 	background-color: $accent-color;
+	margin-top: 0;
 
 	.main-container {
 		display: flex;
@@ -605,8 +608,17 @@ main .about-section {
 
 // Case Study Section
 .case-study-section {
+	.main-container {
+		.subtitle {
+			justify-content: center;
+		}
+
+		.title {
+			text-align: center;
+		}
+	}
 	.case-study-row {
-		margin-top: 100px;
+		margin-top: 50px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -702,6 +714,85 @@ main .about-section {
 	.row2 .info-box {
 		margin-right: 0;
 		margin-left: -100px;
+	}
+}
+
+// Testimonials Section
+.testimonials-section {
+	padding-bottom: 100px;
+	.subtitle {
+		justify-content: center;
+	}
+
+	.title {
+		text-align: center;
+	}
+
+	.testimonials-row {
+		display: flex;
+		justify-content: center;
+		gap: 50px;
+		margin-top: 50px;
+
+		.testimonial-card {
+			flex: 1;
+			cursor: pointer;
+			padding: 10px;
+			border: 1px solid $text-dark;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.3s ease;
+
+			.testimonial-icon img {
+				width: 35px;
+				height: 35px;
+			}
+
+			p {
+				text-align: center;
+				color: $text-light;
+				transition: color 0.3s ease;
+			}
+
+			.testimonial-photo img {
+				width: 90px;
+				height: 90px;
+				border-radius: 50%;
+				box-shadow: 4px 4px 0 transparent;
+				object-fit: cover;
+				margin-top: 15px;
+				transition: 0.3s ease;
+			}
+
+			h5 {
+				color: $accent-color;
+				margin-bottom: -10px;
+			}
+			span {
+				font-size: 20px;
+				font-weight: 400;
+				font-family: $font-family-second;
+				color: $text-dark;
+			}
+
+			&:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+				border: 1px solid $text-dark;
+
+				p {
+					color: $text-dark;
+				}
+
+				.testimonial-photo img {
+					transform: rotate(360deg);
+					box-shadow: 5px 5px 0 $accent-color;
+				}
+			}
+		}
 	}
 }
 
@@ -813,6 +904,10 @@ main .about-section {
 				width: 100%;
 			}
 		}
+	}
+
+	.testimonials-section .testimonials-row {
+		flex-direction: column;
 	}
 }
 
