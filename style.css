@@ -846,6 +846,16 @@ main .about-section .main-container .about-right .title img {
   }
 }
 @media (max-width: 700px) {
+  header .menu-container {
+    padding: 25px 10% 15px;
+  }
+  header .menu-container .hamburger {
+    padding: 8px;
+  }
+  header .menu-container .hamburger svg {
+    width: 25px;
+    height: 25px;
+  }
   header .main-container .menu-container .logo img {
     width: 150px;
   }

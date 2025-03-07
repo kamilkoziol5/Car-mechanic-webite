@@ -912,6 +912,19 @@ main .about-section {
 }
 
 @media (max-width: 700px) {
+	header .menu-container {
+		padding: 25px 10% 15px;
+
+		.hamburger {
+			padding: 8px;
+
+			svg {
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+
 	header .main-container .menu-container .logo img {
 		width: 150px;
 	}
