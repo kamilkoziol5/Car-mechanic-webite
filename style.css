@@ -675,10 +675,6 @@ main .about-section .main-container .about-right .title img {
 .case-study-section .case-study-row .info-box ul li span:hover::before {
   width: 100%;
 }
-.case-study-section .case-study-row .info-box a.btn1 {
-  width: -moz-max-content;
-  width: max-content;
-}
 .case-study-section .case-study-row .photo-box {
   z-index: -1;
 }
@@ -842,6 +838,7 @@ main .about-section .main-container .about-right .title img {
 .contact-section .left-content-side .title + p {
   color: rgba(255, 255, 255, 0.7333333333);
   text-align: center;
+  margin-bottom: 60px;
 }
 .contact-section .left-content-side .contact-row-section {
   margin-top: 20px;
@@ -851,7 +848,6 @@ main .about-section .main-container .about-right .title img {
   justify-content: space-between;
 }
 .contact-section .left-content-side .contact-row-section .contact-box {
-  margin-top: 60px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -1087,6 +1083,19 @@ main .about-section .main-container .about-right .title img {
   .faq-section .faq-container .faq-item.active .answer {
     max-height: 420px;
   }
+  .contact-section .left-content-side {
+    padding: 30px;
+  }
+  .contact-section .left-content-side .contact-row-section {
+    flex-direction: column;
+  }
+  .contact-section .left-content-side .contact-row-section .form-container {
+    order: 1;
+    padding: 20px;
+  }
+  .contact-section .left-content-side .contact-row-section .contact-box {
+    order: 2;
+  }
 }
 @media (max-width: 700px) {
   header .menu-container {
@@ -1129,10 +1138,28 @@ main .about-section .main-container .about-right .title img {
     max-width: 90vw;
     padding: 15px;
   }
+  .contact-section .left-content-side .contact-row-section .contact-box {
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-section .left-content-side .contact-row-section .contact-box .contact-box-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  main .subtitle {
+    flex-direction: column;
+  }
+  .contact-section .left-content-side .contact-row-section .form-container form input,
+  .contact-section .left-content-side .contact-row-section .form-container form textarea {
+    padding: 10px;
+  }
 }
 @media (max-width: 450px) {
   .services-section .service-cards .card {
     min-width: 200px;
     padding: 30px;
+  }
+  .contact-section .left-content-side {
+    padding: 20px;
   }
 }/*# sourceMappingURL=style.css.map */

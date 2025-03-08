@@ -702,9 +702,6 @@ main .about-section {
 					}
 				}
 			}
-			a.btn1 {
-				width: max-content;
-			}
 		}
 
 		.photo-box {
@@ -909,6 +906,7 @@ main .about-section {
 		+ p {
 			color: $text-gray;
 			text-align: center;
+			margin-bottom: 60px;
 		}
 	}
 
@@ -920,7 +918,6 @@ main .about-section {
 		justify-content: space-between;
 
 		.contact-box {
-			margin-top: 60px;
 			display: flex;
 			flex-direction: column;
 			gap: 40px;
@@ -1200,6 +1197,22 @@ main .about-section {
 			max-height: 420px;
 		}
 	}
+	.contact-section .left-content-side {
+		padding: 30px;
+
+		.contact-row-section {
+			flex-direction: column;
+
+			.form-container {
+				order: 1;
+				padding: 20px;
+			}
+
+			.contact-box {
+				order: 2;
+			}
+		}
+	}
 }
 
 @media (max-width: 700px) {
@@ -1263,11 +1276,43 @@ main .about-section {
 		max-width: 90vw;
 		padding: 15px;
 	}
+
+	.contact-section .left-content-side .contact-row-section .contact-box {
+		align-items: center;
+		justify-content: center;
+
+		.contact-box-row {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	main .subtitle {
+		flex-direction: column;
+	}
+
+	.contact-section
+		.left-content-side
+		.contact-row-section
+		.form-container
+		form
+		input,
+	.contact-section
+		.left-content-side
+		.contact-row-section
+		.form-container
+		form
+		textarea {
+		padding: 10px;
+	}
 }
 
 @media (max-width: 450px) {
 	.services-section .service-cards .card {
 		min-width: 200px;
 		padding: 30px;
+	}
+	.contact-section .left-content-side {
+		padding: 20px;
 	}
 }
