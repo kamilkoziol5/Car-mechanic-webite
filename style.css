@@ -818,6 +818,168 @@ main .about-section .main-container .about-right .title img {
   fill: #5f67ff;
 }
 
+.contact-section .left-content-side {
+  border-radius: 12px;
+  background-image: url(assets/images/contact-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px;
+}
+.contact-section .left-content-side .subtitle {
+  justify-content: center;
+}
+.contact-section .left-content-side .subtitle:hover {
+  color: #fff;
+}
+.contact-section .left-content-side .title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.contact-section .left-content-side .title h2 {
+  color: #fff;
+}
+.contact-section .left-content-side .title + p {
+  color: rgba(255, 255, 255, 0.7333333333);
+  text-align: center;
+}
+.contact-section .left-content-side .contact-row-section {
+  margin-top: 20px;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact-section .left-content-side .contact-row-section .contact-box {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row {
+  width: -moz-max-content;
+  width: max-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row .contact-box-row-icon {
+  background-color: #191b1e;
+  padding: 15px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row .contact-box-row-icon svg {
+  transition: all 0.3s ease;
+  width: 30px;
+  height: 30px;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row .contact-box-row-icon svg path {
+  fill: #fff;
+  transition: all 0.3s ease;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row .contact-box-row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #fff;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row .contact-box-row-info p {
+  color: rgba(255, 255, 255, 0.7333333333);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row:hover .contact-box-row-icon {
+  background-color: #fff;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row:hover .contact-box-row-icon svg {
+  transform: rotate(360deg);
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row:hover .contact-box-row-icon svg path {
+  fill: #191b1e;
+}
+.contact-section .left-content-side .contact-row-section .contact-box .contact-box-row:hover .contact-box-row-info p {
+  color: #191b1e;
+  font-size: 20px;
+  font-weight: 600;
+}
+.contact-section .left-content-side .contact-row-section .form-container {
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid #191b1e;
+  border-radius: 12px;
+  padding: 40px;
+}
+.contact-section .left-content-side .contact-row-section .form-container h2 {
+  text-align: center;
+  color: #191b1e;
+  text-transform: uppercase;
+}
+.contact-section .left-content-side .contact-row-section .form-container h2 span {
+  color: #5f67ff;
+}
+.contact-section .left-content-side .contact-row-section .form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.contact-section .left-content-side .contact-row-section .form-container form input,
+.contact-section .left-content-side .contact-row-section .form-container form textarea {
+  cursor: text;
+  padding: 15px;
+  background-color: transparent;
+  border: 1px solid #2b4448;
+  resize: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  outline: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.contact-section .left-content-side .contact-row-section .form-container form input::-moz-placeholder, .contact-section .left-content-side .contact-row-section .form-container form textarea::-moz-placeholder {
+  color: #a0a0a0;
+}
+.contact-section .left-content-side .contact-row-section .form-container form input::placeholder,
+.contact-section .left-content-side .contact-row-section .form-container form textarea::placeholder {
+  color: #a0a0a0;
+}
+.contact-section .left-content-side .contact-row-section .form-container form input:active, .contact-section .left-content-side .contact-row-section .form-container form input:focus, .contact-section .left-content-side .contact-row-section .form-container form input:hover,
+.contact-section .left-content-side .contact-row-section .form-container form textarea:active,
+.contact-section .left-content-side .contact-row-section .form-container form textarea:focus,
+.contact-section .left-content-side .contact-row-section .form-container form textarea:hover {
+  outline: 1px solid #fff;
+  background-color: rgb(25, 27, 30);
+}
+.contact-section .left-content-side .contact-row-section .form-container form textarea:not(:-moz-placeholder-shown), .contact-section .left-content-side .contact-row-section .form-container form input:not(:-moz-placeholder-shown) {
+  background-color: rgb(14, 14, 15);
+}
+.contact-section .left-content-side .contact-row-section .form-container form textarea:not(:placeholder-shown),
+.contact-section .left-content-side .contact-row-section .form-container form input:not(:placeholder-shown) {
+  background-color: rgb(14, 14, 15);
+}
+.contact-section .left-content-side .contact-row-section .form-container form textarea {
+  height: 150px;
+}
+.contact-section .left-content-side .contact-row-section .form-container form input:-webkit-autofill,
+.contact-section .left-content-side .contact-row-section .form-container form textarea:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px rgb(25, 27, 30) inset !important;
+  -webkit-text-fill-color: white !important;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.contact-section .left-content-side .contact-row-section .form-container form button {
+  font-family: "Days One", sans-serif;
+  outline: 1px solid transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.contact-section .left-content-side .contact-row-section .form-container form button:active, .contact-section .left-content-side .contact-row-section .form-container form button:focus, .contact-section .left-content-side .contact-row-section .form-container form button:hover {
+  outline: 1px solid #fff;
+}
+
 @media (max-width: 1485px) {
   header .main-container .hero-content-container {
     flex-direction: column;
