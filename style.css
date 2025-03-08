@@ -80,6 +80,7 @@ html {
 body {
   display: grid;
   place-content: center;
+  padding-bottom: 100px;
 }
 
 .main-container {
@@ -686,9 +687,6 @@ main .about-section .main-container .about-right .title img {
   margin-left: -100px;
 }
 
-.testimonials-section {
-  padding-bottom: 100px;
-}
 .testimonials-section .subtitle {
   justify-content: center;
 }
@@ -744,8 +742,6 @@ main .about-section .main-container .about-right .title img {
 }
 .testimonials-section .testimonials-row .testimonial-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  border: 1px solid #191b1e;
 }
 .testimonials-section .testimonials-row .testimonial-card:hover p {
   color: #191b1e;
@@ -753,6 +749,73 @@ main .about-section .main-container .about-right .title img {
 .testimonials-section .testimonials-row .testimonial-card:hover .testimonial-photo img {
   transform: rotate(360deg);
   box-shadow: 5px 5px 0 #5f67ff;
+}
+
+.faq-section .subtitle {
+  justify-content: center;
+}
+.faq-section .title {
+  text-align: center;
+}
+.faq-section .faq-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 50px;
+}
+.faq-section .faq-container .faq-item {
+  border: 1px solid #191b1e;
+  border-left: 10px solid #191b1e;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faq-section .faq-container .faq-item:hover {
+  border-left-color: #5f67ff;
+}
+.faq-section .faq-container .faq-item .faq-question {
+  width: 100%;
+  background: #fff;
+  border: none;
+  font-family: "Days One", sans-serif;
+  font-size: 18px;
+  padding: 25px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.faq-section .faq-container .faq-item .faq-question span:first-child {
+  transition: color 0.3s ease;
+}
+.faq-section .faq-container .faq-item .faq-question:hover {
+  background-color: rgba(234, 236, 255, 0.6431372549);
+}
+.faq-section .faq-container .faq-item .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.3s ease;
+  padding: 0 25px;
+}
+.faq-section .faq-container .faq-item span svg {
+  transition: all 0.3s ease;
+}
+.faq-section .faq-container .faq-item.active .faq-question span:first-child {
+  color: #5f67ff;
+}
+.faq-section .faq-container .faq-item.active .answer {
+  max-height: 220px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.faq-section .faq-container .faq-item.active span svg {
+  transform: rotate(180deg);
+}
+.faq-section .faq-container .faq-item.active span svg path {
+  fill: #5f67ff;
 }
 
 @media (max-width: 1485px) {
@@ -843,6 +906,24 @@ main .about-section .main-container .about-right .title img {
   }
   .testimonials-section .testimonials-row {
     flex-direction: column;
+  }
+  .faq-section .faq-container {
+    grid-template-columns: 1fr;
+  }
+  .faq-section .faq-container .faq-item span svg {
+    width: 20px;
+  }
+  .faq-section .faq-container .faq-item .answer {
+    padding: 0 15px;
+  }
+  .faq-section .faq-container .faq-item .faq-question {
+    padding: 15px;
+  }
+  .faq-section .faq-container .faq-item .faq-question span:first-child {
+    font-size: 16px;
+  }
+  .faq-section .faq-container .faq-item.active .answer {
+    max-height: 420px;
   }
 }
 @media (max-width: 700px) {

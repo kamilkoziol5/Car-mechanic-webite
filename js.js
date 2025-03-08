@@ -64,3 +64,22 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("scroll", function () {
 	sessionStorage.setItem("scrollPosition", window.scrollY)
 })
+
+
+
+document.querySelectorAll(".faq-question").forEach(button => {
+	button.addEventListener("click", function () {
+		const faqItem = this.parentElement
+		const isActive = faqItem.classList.contains("active")
+
+		// Zamykamy wszystkie otwarte sekcje
+		document.querySelectorAll(".faq-item").forEach(item => {
+			item.classList.remove("active")
+		})
+
+		// Jeśli kliknięty był zamknięty, otwieramy go
+		if (!isActive) {
+			faqItem.classList.add("active")
+		}
+	})
+})
