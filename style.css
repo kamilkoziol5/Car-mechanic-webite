@@ -786,6 +786,7 @@ main .about-section .main-container .about-right .title img {
 }
 .faq-section .faq-container .faq-item .faq-question span:first-child {
   transition: color 0.3s ease;
+  color: #191b1e;
 }
 .faq-section .faq-container .faq-item .faq-question:hover {
   background-color: rgba(234, 236, 255, 0.6431372549);
@@ -897,8 +898,10 @@ main .about-section .main-container .about-right .title img {
 }
 .contact-section .left-content-side .contact-row-section .contact-box .contact-box-row:hover .contact-box-row-info p {
   color: #191b1e;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .contact-section .left-content-side .contact-row-section .form-container {
   background-color: #ffffff;

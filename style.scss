@@ -835,6 +835,7 @@ main .about-section {
 
 				span:first-child {
 					transition: color 0.3s ease;
+					color: $text-dark;
 				}
 
 				&:hover {
@@ -973,8 +974,10 @@ main .about-section {
 					}
 					.contact-box-row-info p {
 						color: $text-dark;
-						font-size: 20px;
+						font-size: 18px;
 						font-weight: 600;
+						text-decoration: underline;
+						text-underline-offset: 3px;
 					}
 				}
 			}
